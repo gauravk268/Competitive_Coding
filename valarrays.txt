@@ -1,0 +1,31 @@
+C++98 introduced a special container called valarray to hold and provide mathematical operations on arrays efficiently.
+
+    It supports element-wise mathematical operations and various forms of generalized subscript operators, slicing and indirect access.
+    As compare to vectors, valarrays are efficient in certain mathematical operations than vectors also.
+
+Public member functions in valarray class :
+
+valarray<int> varr = { 10, 2, 20, 1, 30 }; 
+
+1. apply() :- This function applies the manipulation given in its arguments to all the valarray elements at once and returns a new valarray with manipulated values.
+	varr1 = varr.apply([](int x){return x=x+5;}); 
+
+
+2. sum() :- This function returns the summation of all the elements of valarrays at once.
+	varr.sum()
+
+
+3. min() :- This function returns the smallest element of valarray.
+	varr.min()
+
+4. max() :- This function returns the largest element of valarray.
+	varr.max()
+	
+5. shift() :- This function returns the new valarray after shifting elements by the number mentioned in its argument. If the number is positive, left-shift is applied, if number is negative, right-shift is applied.
+	varr1 = varr.shift(2);
+
+6. cshift() :- This function returns the new valarray after circularly shifting(rotating) elements by the number mentioned in its argument. If the number is positive, left-circular shift is applied, if number is negative, right-circular shift is applied.
+	 varr1 = varr.cshift(-3);
+	 
+7. swap() :- This function swaps one valarray with other.
+	varr1.swap(varr2); 

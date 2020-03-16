@@ -1,0 +1,88 @@
+all_of()	all_of(ar, ar+6, [](int x) { return x>0; })
+
+This function operates on whole range of array elements and can save time to run a loop to check each elements one by one. It checks for a given property on every element and returns true when each element in range satisfies specified property, else returns false.
+
+
+
+any_of()	any_of(ar, ar+6, [](int x){ return x<0; })
+
+This function checks for a given range if there’s even one element satisfying a given property mentioned in function. Returns true if at least one element satisfies the property else returns false.
+
+
+
+none_of()	none_of(ar, ar+6, [](int x){ return x<0; })
+
+This function returns true if none of elements satisfies the given condition else returns false.
+
+
+
+
+copy_n()	copy_n(ar, 6, ar1); 
+
+copy_n() copies one array elements to new array. This type of copy creates a deep copy of array. This function takes 3 arguments, source array name, size of array and the target array name.
+
+
+
+iota()		iota(ar, ar+6, 20); 
+
+This function is used to assign continuous values to array. This function accepts 3 arguments, the array name, size, and the starting number.
+
+
+###########################################################################################################################################
+
+
+
+	Non-Manipulating Algorithms
+
+sort(first_iterator, last_iterator) – To sort the given vector.
+	sort(vect.begin(), vect.end());
+
+reverse(first_iterator, last_iterator) – To reverse a vector.
+	reverse(vect.begin(), vect.end());
+
+*max_element (first_iterator, last_iterator) – To find the maximum element of a vector.
+	*max_element(vect.begin(), vect.end()); 
+
+*min_element (first_iterator, last_iterator) – To find the minimum element of a vector.
+	*min_element(vect.begin(), vect.end()); 
+
+accumulate(first_iterator, last_iterator, initial value of sum) – Does the summation of vector elements.
+	accumulate(vect.begin(), vect.end(), 0);
+
+count(first_iterator, last_iterator,x) – To count the occurrences of x in vector.
+	count(vect.begin(), vect.end(), 20); 
+
+find(first_iterator, last_iterator, x) – Points to last address of vector ((name_of_vector).end()) if element is not present in vector. 
+	find(vect.begin(), vect.end(),5)
+	
+binary_search(first_iterator, last_iterator, x) – Tests whether x exists in sorted vector or not.
+
+
+lower_bound(first_iterator, last_iterator, x) – returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘x’.
+	lower_bound(vect.begin(), vect.end(), 20); 
+
+upper_bound(first_iterator, last_iterator, x) – returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘x’. 	
+	upper_bound(vect.begin(), vect.end(), 20);	
+
+
+###########################################################################################################################################
+
+
+
+	Some Manipulating Algorithms
+	
+arr.erase(position to be deleted) – This erases selected element in vector and shifts and resizes the vector elements accordingly.
+	vect.erase(vect.begin()+1); 
+
+arr.erase(unique(arr.begin(),arr.end()),arr.end()) – This erases the duplicate occurrences in sorted vector in a single line
+	vect.erase(unique(vect.begin(),vect.end()),vect.end());
+
+next_permutation(first_iterator, last_iterator) – This modified the vector to its next permutation.
+	 next_permutation(vect.begin(), vect.end());	
+
+prev_permutation(first_iterator, last_iterator) – This modified the vector to its previous permutation
+	prev_permutation(vect.begin(), vect.end()); 
+	
+distance(first_iterator,desired_position) – It returns the distance of desired position from the first iterator.This function is very useful while finding the index.	
+	distance(vect.begin(), max_element(vect.begin(), vect.end())); 
+
