@@ -1,3 +1,5 @@
+    
+
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
  
@@ -47,40 +49,37 @@ const int MOD = 1000000007;
 const ll INF = 1e18;
 const int MX = 100001; //check the limits, dummy
 
+int gcd(int a, int b) { 
+   if (b == 0) 
+      return a; 
+   return gcd(b, a % b);  
+}
+
 void solve() {
-    int N;  cin>>N;
-
-    bool handShake[N][N];
-    MEM(handShake, true);
-
-    int count_handShake = 0;
-
-    F0R(i, N){
-        handShake[i][i] = false;
-        count_handShake++;
+    int x, y, p, q;
+    cin>>x>>y>>p>>q;
+    
+    int b1=1, b2=1, b3=1;
+    
+    b1 = p * y;
+    b2 = x * q;
+    b3 = x * y;
+    
+    int commonFactor = gcd(b1, gcd(b2, b3));
+    while(commonFactor != 1){
+        b1 /= commonFactor;
+        b2 /= commonFactor;
+        b3 /= commonFactor;
+        commonFactor = gcd(b1, gcd(b2, b3));
     }
-
-    F0R(i, 10){
-        int temp;   cin>>temp;
-
-        F0R(j, 9){
-            int notFriend;  cin>>notFriend;
-            if(handShake[temp][notFriend] == true){
-                handShake[temp][notFriend] = false;
-                count_handShake++;
-            }
-        }
-    }
-
-    count_handShake = (N*N-N) - count_handShake;
-    cout<<count_handShake<<endl;
+    
+    cout<<b1<<" "<<b2<<" "<<b3<<endl;
 }
 
 int main() {
 	ios_base::sync_with_stdio(0); cin.tie(0);    
 	
 	solve();
-	
     // int T; cin >> T;
     // FOR(i, 1, T+1) {
     // }
