@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "valarray": "cpp"
     },
     "python.pythonPath": "C:\\Users\\GAURAV KUMAR\\Miniconda3\\python.exe"
 }
