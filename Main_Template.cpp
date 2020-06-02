@@ -52,15 +52,15 @@ int main()
     cin.tie(0);
     ios::sync_with_stdio(false);
 
-    solve();
+    // solve();
 
-    // int testCases;
-    // cin >> testCases;
+    int testCases;
+    cin >> testCases;
 
-    // while (testCases--)
-    // {
-    //     solve();
-    // }
+    while (testCases--)
+    {
+        solve();
+    }
 
     return 0;
 }
