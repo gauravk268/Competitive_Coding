@@ -7,16 +7,35 @@ using namespace std;
 #define FOR(i, a, b) for(int i=a; i<b; i++)
 #define MEM(a, b, n) memset(a, b, sizeof(a[0])*n)
 #define pb push_back
+#define endl "\n"
 
 const int MOD = 1e9+7;
 const int SIZE_INT = 16;
 
+
 void solve()
 {
-    ll n;
-    cin>>n;
+    string line;
+    cin>>line;
 
-    cout<<(n*(n-1))+1<<"\n";
+    ll pair=0;
+    char present, past;
+    past = line[0];
+    for(ll i=1; i<line.length(); i++){
+        present = line[i];
+
+        if(past == present){
+            past = present;
+            continue;
+        }
+        else{
+            pair++;
+            past = line[i+1];
+            i++;
+        }
+    }
+
+    cout<<pair<<endl; 
 }
 
 int main()
