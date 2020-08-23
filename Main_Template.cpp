@@ -1,15 +1,22 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+
+#define ENABLE_DEBUG
+
+
 #define ll long long
+
 
 #define FoR(i, a) for(int i=0; i<a; i++)
 #define FOR(i, a, b) for(int i=a; i<b; i++)
 #define MEM(a, b, n) memset(a, b, sizeof(a[0])*n)
 #define pb push_back
 
+
 const int MOD = 1e9+7;
 const int SIZE_INT = 16;
+
 
 //To print binary equivalent of a binary number
 void printBinary(unsigned n)
@@ -19,6 +26,7 @@ void printBinary(unsigned n)
         (n & i) ? printf("1") : printf("0");
     cout << "\n";
 }
+
 
 // Fast way to calculate power of a large number
 ll powerFast(ll a, ll b)
@@ -41,13 +49,20 @@ ll powerFast(ll a, ll b)
     return result;
 }
 
+
 void solve()
 {
     
 }
 
+
 int main()
 {
+	#ifdef ENABLE_DEBUG
+        freopen("output.txt", "w", stdout);
+        freopen("error.txt", "w", stderr);
+    #endif
+	
     //two lines to speed-up
     cin.tie(0);
     ios::sync_with_stdio(false);
