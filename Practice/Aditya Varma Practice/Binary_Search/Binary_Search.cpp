@@ -9,18 +9,18 @@ using namespace std;
 
 bool BinarySearch(vector<int> &value, int number)
 {
-	int start=0, end=value.size()-1, mid=start+((end-start)/2);
+	int start=0, end=value.size()-1, mid;
 	int n;
 
 	while(start<=end)
 	{
 		cout<<".";
+		mid=start+((end-start)/2);
+		
 		if(value[mid]==number)	return true;
 
 		if(number > value[mid])		start=mid+1;
 		else if(number < value[mid])	end=mid-1;
-
-		mid=(end+start)/2;
 	}
 
 	return false;
