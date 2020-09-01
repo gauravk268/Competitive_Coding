@@ -8,20 +8,22 @@ using namespace std;
 
 int RotationTimes(vector<int> &value)
 {
-	int start=0, end=value.size()-1, mid=start+((end-start)/2);
-	int n=value.size();
+	int start=0, end=value.size()-1, n=value.size(), mid;
 
-	while(start!=end)
+	if(value[0]<value[n-1])
+		return 0;
+	else while(start<=end)
 	{
+		cout<<".";
+		mid=start+((end-start)/2);
+
 		if(value[mid]<=value[(mid+1)%n] && value[mid]<=value[(mid+n-1)%n])
 		{
 			return mid;
 		}
 
-		if(value[start]<=value[mid])	start=mid+1;
-		else if(value[mid]<=value[end])	end=mid-1;
-
-		mid=(end+start)/2;
+		if(value[start]<=value[mid])	start=mid;
+		else if(value[mid]<=value[end])	end=mid;
 	}
 
 	return -1;
@@ -29,7 +31,7 @@ int RotationTimes(vector<int> &value)
 
 void solve()
 {
-    vector<int> value={11, 12, 15, 18, 2, 5, 6, 8};
+    vector<int> value={11, 13, 15, 18, 2, 5, 6, 8};
 
     cout<<RotationTimes(value)<<endl;
 
