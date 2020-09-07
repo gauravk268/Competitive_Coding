@@ -1,21 +1,28 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-
-#define ENABLE_DEBUG
-
-
-#define ll long long
-
-
-#define FoR(i, a) for(int i=0; i<a; i++)
-#define FOR(i, a, b) for(int i=a; i<b; i++)
+#define ll     long long
+#define endl   "\n"
+#define MOD    1e9+7
+#define deb(x) cout<<#x<<"="<<x<<endl
 #define MEM(a, b, n) memset(a, b, sizeof(a[0])*n)
+
+#define f  first
+#define s  second
 #define pb push_back
+#define mp make_pair
 
+typedef vector<int> vi;
+typedef deque<int>  di;
+typedef stack<int>  si;
+typedef priority_queue<int> max_heap;
+typedef priority_queue<int, vector<int>, greater<int>> min_heap;
+typedef pair<int, int> 		 pi;
+typedef tuple<int, int, int> ti;
 
-const int MOD = 1e9+7;
-const int SIZE_INT = 16;
+void printVector(vector<int> &value){ for(auto temp:value){ cout<<temp<<" "; } cout<<"\n";}
+
+// #define ENABLE_DEBUG
 
 
 //To print binary equivalent of a binary number
@@ -55,27 +62,21 @@ void solve()
     
 }
 
-
-int main()
+int main() 
 {
 	#ifdef ENABLE_DEBUG
-        freopen("output.txt", "w", stdout);
-        freopen("error.txt", "w", stderr);
-    #endif
+		freopen("input.txt" , "r", stdin );
+		freopen("output.txt", "w", stdout);
+	#endif
+
+	int t=1;
+	// cin>>t;
+
+	while(t--)
+	{
+		cout<<"Result: \n";
+	    solve();
+	}
 	
-    //two lines to speed-up
-    cin.tie(0);
-    ios::sync_with_stdio(false);
-
-    // solve();
-
-    int testCases;
-    cin >> testCases;
-
-    while (testCases--)
-    {
-        solve();
-    }
-
-    return 0;
+	return 0;
 }
