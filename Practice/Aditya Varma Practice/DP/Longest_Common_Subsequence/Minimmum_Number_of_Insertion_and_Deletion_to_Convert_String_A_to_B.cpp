@@ -24,7 +24,7 @@ void printVector(vector<int> &value){ for(auto temp:value){ cout<<temp<<" "; } c
 // #define ENABLE_DEBUG
 
 
- string printLCS(string a, string b, int m, int n)
+int LCS(string a, string b, int m, int n)
 {
 	int dp[m+1][n+1];
 
@@ -41,30 +41,20 @@ void printVector(vector<int> &value){ for(auto temp:value){ cout<<temp<<" "; } c
 		}
 	}
 
-	string result;
+	return dp[m][n];
+}
 
-	int i=m, j=n;
-	while(i>0 && j>0)
-	{
-		if(a[i-1]==b[j-1])
-		{
-			result.push_back(a[i-1]);
+void solve()
+{	
+	string a="heap", b="pea";	//3
+	// string a="abcdef", b="abcegf";	//2
 
-			i--;
-			j--;
-		}
-		else
-		{
-			if(dp[i-1][j]>dp[i][j-1])
-				i--;
-			else
-				j--;
-		}
-	}
+	int m=a.length(), n=b.length();
+	int lengthLCS=LCS(a, b, m, n);
 
-	reverse(result.begin(), result.end());
+	cout<<(m+n)-(2*lengthLCS)<<endl;
 
-	return result;
+	return;
 }
 
 int main() 
@@ -80,13 +70,7 @@ int main()
 	while(t--)
 	{
 		cout<<"Result: \n";
-		string a="abcdef", b="abcegf";		//5
-	    // string a="AGGTAB", b="GXTXAYB";		//4
-	    // string a="ABCDGH", b= "AEDFHR";		//3
-
-	    int m=a.length(), n=b.length();
-
-	    cout<<printLCS(a, b, m, n)<<endl;
+		solve();
 	}
 	
 	return 0;
