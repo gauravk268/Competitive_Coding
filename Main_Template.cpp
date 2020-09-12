@@ -3,9 +3,9 @@ using namespace std;
 
 #define ll     long long
 #define endl   "\n"
-#define MOD    1e9+7
+#define MOD    1000000007
 #define deb(x) cout<<#x<<"="<<x<<endl
-#define MEM(a, b, n) memset(a, b, sizeof(a[0])*n)
+#define fLoop(n)	for(int i=1; i<=n; i++)
 
 #define f  first
 #define s  second
@@ -57,26 +57,28 @@ ll powerFast(ll a, ll b)
 }
 
 
-void solve()
+void solution()
 {
-    
+
 }
 
-int main() 
+int main()
 {
 	#ifdef ENABLE_DEBUG
 		freopen("input.txt" , "r", stdin );
 		freopen("output.txt", "w", stdout);
 	#endif
 
-	int t=1;
+	std::ios::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	int t = 1;
 	// cin>>t;
 
-	while(t--)
+	while (t--)
 	{
-		cout<<"Result: \n";
-	    solve();
+		solution();
 	}
-	
+
 	return 0;
 }
