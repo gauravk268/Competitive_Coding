@@ -47,7 +47,11 @@ int countSubsetSum(vector<int> &value, int sum)
 
 void solve()
 {	
-	vector<int> value={2, 3, 5, 6, 8, 10}; 	int sum=10;		// 3;
+	// vector<int> value={2, 3, 5, 6, 8, 10}; 	int sum=10;		// 3;
+	// vector<int> value={1, 2, 3, 3}; 	int sum=6;		// 3;
+	// vector<int> value={1, 1, 1, 1}; 	int sum=1;		// 4;
+	vector<int> value={10, 1, 2, 7, 6, 1, 5}; 	int sum=8;		// 4;
+	
 	cout<<"CountSubsetSum: "<<countSubsetSum(value, sum)<<endl;
 
     return;
