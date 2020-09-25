@@ -6,57 +6,52 @@ using namespace std;
 #define MOD      1000000007
 #define deb(x)   cout<<#x<<"="<<x<<endl
 
-int maxheight(vector<ll> &v, ll h)
+ll woodCollected(vector<ll> &v, int cut)
 {
-    ll n=v.size(), result=0;
-    sort(v.begin(), v.end(), greater<ll>());
-    if(accumulate(v.begin(), v.end(), 0) < h)   return -1;
-    if(h==0)    return v[0];
-
-    for(ll i=1; i<n; i++)
+    ll result=0;
+    for(int i=v.size()-1; i>=0; i--)
     {
-        ll diff=v[i-1]-v[i];
-        // cout<<diff*i<<endl;
-        
-        if(result+(diff*i) == h)
-        {
-            return v[i];
-        }
-        else if(result+(diff*i) > h)
-        {
-            diff=h-result;
-            ll temp=diff/i;
-
-            if(temp<1)  return v[i-1]-1;
-            else return v[i-1]-temp;
-        }
-        else result+=(diff*i);
+        if(v[i]<=cut)   break;
+        result+=(v[i]-cut);
     }
 
-    ll s=v[n-1];
-    if(result<h)
-    {
-        while(result<h)
-        {
-            result+=n;
-            s--;
-        }
-    }
-    return s;
+    return result;
 }
 
+int solution(vector<ll> &v, int h)
+{
+    if(accumulate(v.begin(), v.end(), 0)<h) return -1;
 
+    int n=v.size();
+    sort(v.begin(), v.end());
+
+    int l=0, r=v[n-1], m;    
+    while(l<=r)
+    {
+        m=l+((r-l)/2);
+        int c=woodCollected(v, m);
+
+        if(c==h)    return m;
+
+        if(c>h) l=m+1;
+        else    r=m-1;
+    }
+
+    return solution(v, h+1);
+}
 
 int main(){
+
     ll n,h;
     cin>>n;
 
     vector<ll> a(n);
-    for(ll i=0;i<n;i++)
-        cin>>a[i];
+    for(ll i=0;i<n;i++)     cin>>a[i];
     cin>>h;
-    
-    cout<<maxheight(a, h)<<endl;
+
+    cout<<solution(a, h)<<endl;
+
+    return 0;
 }
 
 /*
@@ -69,26 +64,5 @@ Sample Output
 
 https://hack.codingblocks.com/app/contests/1783/1756/problem
 
-#                   1
-#                   2  
-#                   3
-#                   4
 
-# #                 6 
-# #                 8
-# # #               11 
-# # # #             15 
-# # # #             19
-
-# # # #             23
-# # # #             27
-# # # #             31
-# # # #             35
-# # # #             39
-
-# # # #             43
-# # # #             47
-# # # #             51
-# # # #             55
-# # # #             59
 */
