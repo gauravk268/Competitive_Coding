@@ -15,20 +15,21 @@ using namespace std;
 #define mp make_pair
 
 // #define ENABLE_DEBUG
-//minST is the minimum segment tree
-//ar is the array containing all the elements
-//si=currentIndex, ss=startIndex, se=endIndex
 
 int minST[400004], ar[100001]; 
 void buildTree(int si, int ss, int se)
 {	
-	if(ss==se)	minST[si]=ar[ss];
+	if(ss==se)
+	{
+		minST[si]=ar[ss];
+		return;
+	}
 
 	int mid=(ss+se)/2;
 	buildTree(2*si, ss, mid);
-	buildTree(2*si +1, mid+1, se);
+	buildTree((2*si) +1, mid+1, se);
 
-	minST[si]=min(minST[2*si], minST[2*si +1]);
+	minST[si]=min(minST[2*si], minST[(2*si) +1]);
 }
 
 int query(int si, int ss, int se, int qs, int qe)
@@ -43,34 +44,22 @@ int query(int si, int ss, int se, int qs, int qe)
 	return min(l, r);
 }
 
-void updateST(int si, int ss, int se, int qi)
-{
-	if(ss==se)
-	{
-		minST[si]=ar[ss];
-		return;
-	}
-
-	int mid=(ss+se)/2;
-	if(qi<=mid)	updateST(2*si, ss, mid, qi);
-	else 	updateST(2*si +1, mid+1, se, qi);
-
-	minST[si]=min(minST[2*si], minST[2*si +1]);
-}
 
 void solution()
 {
-	int n; 	cin>>n;
+	int n;		cin>>n;
 
-	for(int i=1; i<=n; i++)		cin>>ar[i];
+	for(int i=1; i<=n; i++)
+		cin>>ar[i];
+
 	buildTree(1, 1, n);
 
-	int q;	cin>>q;
+	int q;		cin>>q;
 	while(q--)
 	{
-		int a, b, c;	cin>>a>>b>>c;
+		int a, b;	cin>>a>>b;
 
-
+		cout<<query(1, 1, n, a+1, b+1)<<endl;
 	}
 }
 
@@ -97,17 +86,13 @@ int main()
 }
 
 /*
-SAMPLE INPUT 
-6
-1 2 3 4 5 6
-4
-1 2 5
-2 1 4
-0 5 4
-1 1 6
-
-SAMPLE OUTPUT 
+Input:
+3
+1 4 1
 2
-2
+1 1
+1 2
+Output:
 4
+1
 */
