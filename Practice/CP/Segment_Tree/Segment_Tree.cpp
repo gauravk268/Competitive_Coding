@@ -60,18 +60,7 @@ void updateST(int si, int ss, int se, int qi)
 
 void solution()
 {
-	int n; 	cin>>n;
-
-	for(int i=1; i<=n; i++)		cin>>ar[i];
-	buildTree(1, 1, n);
-
-	int q;	cin>>q;
-	while(q--)
-	{
-		int a, b, c;	cin>>a>>b>>c;
-
-
-	}
+	
 }
 
 int main()
@@ -97,17 +86,7 @@ int main()
 }
 
 /*
-SAMPLE INPUT 
-6
-1 2 3 4 5 6
-4
-1 2 5
-2 1 4
-0 5 4
-1 1 6
+Input
 
-SAMPLE OUTPUT 
-2
-2
-4
+Output
 */
