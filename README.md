@@ -13,6 +13,8 @@
     * Long-Challenge May 2020
     * Long-Challenge Jun 2020
     * Long-Challenge Jul 2020
+	* Long-Challenge Aug 2020
+	* Long-Challenge Oct 2020
     * Lunch-Time Nov 2019
     * Lunch-Time Jan 2020
     * Lunch-Time Apr 2020
