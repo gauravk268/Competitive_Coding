@@ -6,8 +6,9 @@ typedef long long ll;
 typedef long double ld;
 typedef pair<int,int> pi;
 typedef vector<int> vi;
+typedef vector<ll> vll;
 typedef vector<pi> vpi;
- 
+
 #define f first
 #define s second
 #define sz(x) (int)x.size()
@@ -18,7 +19,7 @@ typedef vector<pi> vpi;
 #define pb push_back
 #define endl "\n"
 #define dotl " "
- 
+
 #define fr1(i,a,b) for(int i = (a); i < (b); ++i)
 #define fr(i,a) fr1(i,0,a)
 #define rf1(i,a,b) for(int i = (b)-1; i >= (a); --i)
@@ -29,13 +30,22 @@ typedef vector<pi> vpi;
 #define showRunTime cerr << "time taken : " << (float)clock() / CLOCKS_PER_SEC << " secs" << endl;
 #define ONLINE_JUDGE freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
- 
+
 const int MX  = 2e5+5;
 const int N   = 1e5+5;
 const int MOD = 1e9+7;      // used in most problems
 const ld  PI  = acos(-1);   // inverse cos of -1
 
 void solution(){
+  ll n;  cin>>n;
+  ll sum = (n*(n-1)/2);
+  
+  if(sum&1){
+    cout<<"NO"<<endl;
+    return;
+  }
+
+  
 
 }
 
@@ -60,6 +70,16 @@ int main(){
 
 /*
 
+Input:
+2
+7
+6
 
-
+Output:
+YES
+4
+1 2 4 7
+3
+3 5 6
+NO
 */

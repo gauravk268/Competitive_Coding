@@ -2,12 +2,13 @@
 using namespace std;
 
 typedef long long ll;
-#define ull unsigned long long
+typedef unsigned long long ull;
 typedef long double ld;
 typedef pair<int,int> pi;
 typedef vector<int> vi;
+typedef vector<ll> vll;
 typedef vector<pi> vpi;
- 
+
 #define f first
 #define s second
 #define sz(x) (int)x.size()
@@ -18,7 +19,7 @@ typedef vector<pi> vpi;
 #define pb push_back
 #define endl "\n"
 #define dotl " "
- 
+
 #define fr1(i,a,b) for(int i = (a); i < (b); ++i)
 #define fr(i,a) fr1(i,0,a)
 #define rf1(i,a,b) for(int i = (b)-1; i >= (a); --i)
@@ -29,25 +30,48 @@ typedef vector<pi> vpi;
 #define showRunTime cerr << "time taken : " << (float)clock() / CLOCKS_PER_SEC << " secs" << endl;
 #define ONLINE_JUDGE freopen("input.txt", "r", stdin);
 // freopen("output.txt", "w", stdout);
- 
+
 const int MX  = 2e5+5;
 const int N   = 1e5+5;
 const int MOD = 1e9+7;      // used in most problems
 const ld  PI  = acos(-1);   // inverse cos of -1
 
-void solution(){
+ll powerFast(ll a, ll b)
+{
+    // 3^10 == (3*3)^(10/2)
+    // keep on repeating until the power cannot be divided
 
+    a%=MOD;
+    ll result =1;
+    while(b>0){
+        if(b%2 == 1){
+            result *= a;
+            result %= MOD;
+        }
+
+        a*=a;   a%=MOD;
+        b/=2;
+    }
+    
+    return result;
+} 
+
+void solution(){
+  ull n;
+  cin>>n;
+  ull result = powerFast(2, n);
+  cout<< result <<endl;
 }
 
 int main(){
-  ONLINE_JUDGE;
+  // ONLINE_JUDGE;
 
   std::ios::sync_with_stdio(false);
   cin.tie(0);
   cout.tie(0);
 
   int t = 1;
-  cin >> t;
+  // cin >> t;
 
   while (t--)
   {
