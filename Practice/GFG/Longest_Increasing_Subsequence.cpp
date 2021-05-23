@@ -40,6 +40,29 @@ int fun(vi &val, int last, int i)
   return fun(val, last, i - 1);
 }
 
+int longestSubsequence(int n, int a[])
+{
+  vector<int> result, b;
+  for (int i = 0; i < n; i++)
+  {
+    b.push_back(a[i]);
+  }
+
+  for (int i = 0; i < n; i++)
+  {
+    auto it = lower_bound(begin(result), end(result), b[i]);
+    if (it == end(result))
+      result.push_back(b[i]);
+    else
+      *it = b[i];
+  }
+
+  // for(auto x:result)  cout<<x<<" ";
+  // cout<<endl;
+
+  return result.size();
+}
+
 int funDP(vi &val, int n)
 {
   int dp[n];
