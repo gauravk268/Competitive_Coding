@@ -12,24 +12,6 @@ using namespace std;
 #define pb push_back
 #define mp make_pair
 
-// #define ENABLE_DEBUG
-
-/*
-Rohan is preparing for his interview for the position of ta at Coding Blocks. He doesn't have much time to prepare, so he will mug up the solution to the problems that he is unable to solve. He came across one problem for which he couldn't find the solution. As he doesn't have much time, so he asked you for the solution and during the time you are solving the problem, he can do some other problem. The problem is:
-Given n dice each with m faces, numbered from 1 to m.Find the number of different ways to get x as the sum of values on all the dice.
-Can you help him?
-As the number can be large print it modulo 10^9+7.
-
-Input Format
-The first line contains three integers n ( the number of dice) , m (the number of face of each dice) and x (the sum to get).
-
-Constraints
-1 <= n,m <=50
-1 <=x <= 500
-
-Output Format
-Print a single integer equal to the number of ways to get sum as x modulo 10^9+7.
-*/
 
 int dp[55][555];
 int func(int numDice, int numFace, int sum)
