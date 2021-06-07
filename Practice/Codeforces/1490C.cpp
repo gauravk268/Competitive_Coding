@@ -49,7 +49,6 @@ bool isCube(ll n){
 void solution(){
   ll n;
   cin >> n;
-  // deb(n);
 
   if(n==2){
     cout << "YES\n";
@@ -60,7 +59,6 @@ void solution(){
     if(i && n-i){
       if(isCube(n-pow(i, 3))){
         cout << "YES\n";
-        // deb(i);
         return;
       }
     }
