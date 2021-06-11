@@ -13,7 +13,6 @@ bool BinarySearch(vector<int> &value,int start, int end, int number)
 
 	while(start<=end)
 	{
-		cout<<".";
 		if(value[mid]==number)	return true;
 
 		if(number > value[mid])		start=mid+1;
@@ -33,7 +32,6 @@ int RotationTimes(vector<int> &value)
 		return 0;
 	else while(start<=end)
 	{
-		cout<<".";
 		mid=start+((end-start)/2);
 
 		if(value[mid]<=value[(mid+1)%n] && value[mid]<=value[(mid+n-1)%n])
