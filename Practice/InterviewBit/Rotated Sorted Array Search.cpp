@@ -7,7 +7,6 @@ int findPivot(const vector<int> &A){
         int mid=low+(high-low)/2;
         int left=(mid-1)%n, right=(mid+1)%n;
         
-        
         if(A[mid]<=A[right] && A[mid]<=A[left])     return mid;
         
         if(A[low]<=A[mid])  low=mid;

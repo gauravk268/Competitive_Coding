@@ -1,3 +1,3 @@
 git add .
-git commit
+git commit -m "UPDATE: added more solutions"
 git push
