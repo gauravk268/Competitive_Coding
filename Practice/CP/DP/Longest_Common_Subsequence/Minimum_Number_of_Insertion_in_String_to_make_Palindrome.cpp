@@ -21,7 +21,7 @@ typedef tuple<int, int, int> ti;
 
 void printVector(vector<int> &value){ for(auto temp:value){ cout<<temp<<" "; } cout<<"\n";}
 
-// #define ENABLE_DEBUG
+#define ENABLE_DEBUG
 
 
 void minInsertion(string a, string b, int m, int n)
