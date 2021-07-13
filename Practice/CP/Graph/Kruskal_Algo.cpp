@@ -12,10 +12,9 @@ bool comp(edge a, edge b){
   return a.w < b.w;
 }
 
-int find(int a){
-  if(par[a]!= -1) return par[i];
-
-  return par[i]=find(par[i]);
+int find(int &a){
+  if (par[a] == -1) return a;
+  return par[a] = find(par[a]);
 }
 
 void union(int a, int b){
