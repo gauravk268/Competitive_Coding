@@ -65,10 +65,6 @@ void solve()
     right=NSR(stocks);
     int max=0;
     
-    // for(auto temp:right)
-    //     cout<<temp<<" ";
-    // cout<<endl;
-    
     for(int i=0; i<stocks.size(); i++)
     {
         int area=(right[i]-left[i]-1)*stocks[i];
