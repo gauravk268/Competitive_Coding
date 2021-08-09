@@ -1,48 +1,48 @@
-string Solution::simplifyPath(string A)
+string Solution::simplifyPath(string path)
 {
   stack<string> s;
+  s.push("/");
 
-  string tmp = "";
-  for (int i = 0; i < A.length(); i++)
+  for (int i = 1; i < path.length(); i++)
   {
-    if (A[i] == '/')
+    string str = "";
+    while (path[i] != '/' && i < path.length())
     {
-      if (tmp == "..")
-      {
-        if (s.size())
-        {
-          s.pop();
-        }
-      }
-      else if(tmp!="" && tmp!=".")
-        s.push(tmp);
-
-      tmp = "";
+      str += path[i];
+      i++;
     }
-    else
+
+    if (str == ".." && s.size() > 1)
     {
-      tmp += A[i];
+      s.pop();
+      s.pop();
+    }
+
+    if (str != ".." && str != "." && str != "")
+    {
+      s.push(str);
+      s.push("/");
     }
   }
 
-  if (tmp == "..")
-  {
-    if (s.size())
-    {
-      s.pop();
-    }
-  }else if (tmp != "." && tmp != "")
-    s.push(tmp);
+  stack<string> stemp;
 
-  string result = "";
-  while (s.size())
+  while (!s.empty())
   {
-    result = "/" + s.top() + result;
+    stemp.push(s.top());
     s.pop();
   }
 
-  if (result.length() == 0)
-    return "/";
-    
-  return result;
-}
+  string res = "";
+  while (!stemp.empty())
+  {
+    res += stemp.top();
+    stemp.pop();
+  }
+
+  int n = res.length() - 1;
+  if (res.length() > 1)
+    res.erase(res.begin() + n);
+
+  return res;
+};
