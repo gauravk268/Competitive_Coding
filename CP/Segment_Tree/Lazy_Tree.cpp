@@ -85,7 +85,7 @@ void updateST(int si, int ss, int se,int qs, int qe, int val)
 
 void solution()
 {
-		
+
 }
 
 int main()
