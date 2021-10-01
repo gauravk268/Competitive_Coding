@@ -236,6 +236,8 @@
 ├── InterviewBit
 │   ├── Allocate Books.cpp
 │   ├── FizzBuzz.cpp
+│   ├── Backtracking & Hashing
+│   │   └── Longest Consecutive Sequence.cpp
 │   ├── Graph
 │   │   ├── Black Shapes.cpp
 │   │   ├── Commutable Islands.cpp
