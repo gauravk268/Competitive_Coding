@@ -238,6 +238,8 @@
 │   ├── FizzBuzz.cpp
 │   ├── Backtracking & Hashing
 │   │   └── Longest Consecutive Sequence.cpp
+│   ├── Binary Search
+│   │   ├── Matrix Search.cpp
 │   ├── Graph
 │   │   ├── Black Shapes.cpp
 │   │   ├── Commutable Islands.cpp
