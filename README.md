@@ -242,6 +242,8 @@
 │   │   ├── Matrix Search.cpp
 │   │   ├── Search for a Range.cpp
 │   │   ├── Smaller or equal elements.cpp
+│   │   ├── Sorted Insert Position.cpp
+│   │   └── WoodCutting Made Easy!.cpp
 │   ├── Graph
 │   │   ├── Black Shapes.cpp
 │   │   ├── Commutable Islands.cpp
