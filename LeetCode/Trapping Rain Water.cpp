@@ -1,28 +1,22 @@
 class Solution {
 public:
-    int trap(vector<int>& building) {
-        int n=building.size();
-        if(n<3) return 0;
+    int trap(vector<int>& height) {
+        int n=height.size();
+        if(n==0 || n==1)
+            return 0;
+        int mxl[n];
+        int mxr[n];
+        mxl[0]=height[0];
+        mxr[n-1]=height[n-1];
+        for(int i=1;i<n;i++)
+            mxl[i]=max(mxl[i-1], height[i]);
+        for(int i=n-2;i>=0;i--)
+            mxr[i]=max(mxr[i+1], height[i]);
         
-        int maxRight[n], maxLeft[n];
-
-        for(int i=0; i<n; i++)
-        {
-            if(i==0)    maxLeft[i]=building[i];
-            else maxLeft[i]=max(building[i], maxLeft[i-1]);
+        long long int sum=0;
+        for(int i=0;i<n;i++){
+            sum+=(min(mxl[i], mxr[i])-height[i]);
         }
-
-        for(int i=n-1; i>=0; i--)
-        {
-            if(i==n-1)    maxRight[i]=building[i];
-            else maxRight[i]=max(building[i], maxRight[i+1]);
-        }
-
-        int result=0;
-        for(int i=0; i<n; i++){
-            result += min(maxRight[i], maxLeft[i])-building[i];
-        }
-
-        return result;
+        return sum;
     }
 };
