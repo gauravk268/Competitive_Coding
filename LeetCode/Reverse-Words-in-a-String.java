@@ -1,16 +1,15 @@
-class Solution {
-    public String reverseWords(String s) {
-        String[] words = s.split(" ");
-
-        StringBuffer str = new StringBuffer();
-        
-        for(int i=words.length-1; i>=0; i--){
-            if(words[i] != ""){
-                str.append(words[i]);
-                str.append(" ");
-            }
-        }
-
-        return str.toString().trim();
-    }   
-}
+1class Solution {
+2    public String reverseWords(String s) {
+3        String[] words = s.split(" ");
+4        StringBuilder sb = new StringBuilder();
+5
+6        for(int i=words.length-1; i>=0; i--){
+7            if(!words[i].trim().isEmpty()){
+8                sb.append(words[i].trim());
+9                sb.append(" ");
+10            }
+11        }
+12
+13        return sb.toString().trim();
+14    }
+15}
