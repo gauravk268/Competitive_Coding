@@ -10,15 +10,16 @@
 10 */
 11class Solution {
 12    public ListNode reverseList(ListNode h) {
-13        if(h==null || h.next == null)   return h;
-14
-15        ListNode p=h, prev=null;
-16        while(p!=null){
-17            ListNode temp = p;
-18            p = p.next;
-19            temp.next = prev;
-20            prev = temp;
-21        }
-22        return prev;
-23    }
-24}
+13        if (h == null || h.next == null)
+14            return h;
+15
+16        ListNode p = h, prev = null;
+17        while (p != null) {
+18            ListNode temp = p.next;
+19            p.next = prev;
+20            prev = p;
+21            p = temp;
+22        }
+23        return prev;
+24    }
+25}
