@@ -1,17 +1,15 @@
 1class Solution {
-2    Map<Integer, Integer> mem = new HashMap<>();
+2    int[] mem = new int[38];
 3
 4    public int tribonacci(int n) {
-5        if (n == 0)
-6            return 0;
-7        if (n == 1 || n == 2)
-8            return 1;
-9
-10        if (mem.containsKey(n))
-11            return mem.get(n);
-12        Integer res = tribonacci(n - 1) + tribonacci(n - 2) + tribonacci(n - 3);
-13        mem.put(n, res);
-14
-15        return res;
-16    }
-17}
+5        mem[0] = 0;
+6        mem[1] = 1;
+7        mem[2] = 1;
+8
+9        for (int i = 3; i <= n; i++) {
+10            mem[i] = mem[i - 3] + mem[i - 2] + mem[i - 1];
+11        }
+12
+13        return mem[n];
+14    }
+15}
