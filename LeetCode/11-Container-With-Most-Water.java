@@ -4,16 +4,15 @@ class Solution {
         if (n == 1)
             return 0;
 
-        int i = 0, j = n-1, result = Integer.MIN_VALUE;
+        int i = 0, j = n - 1, result = Integer.MIN_VALUE, minHeight = Integer.MIN_VALUE;
         while (i < j) {
-            result = Math.max(result, (j - i) * Math.min(height[i], height[j]));
-            
-            if(height[i] < height[j]){
+            minHeight = Math.min(height[i], height[j]);
+            result = Math.max(result, (j - i) * minHeight);
+
+            while (i < j && minHeight >= height[i])
                 i++;
-            }
-            else{
+            while (i < j && minHeight >= height[j])
                 j--;
-            }
         }
 
         return result;
