@@ -3,25 +3,19 @@ class Solution {
         if (word1.length() != word2.length())
             return false;
 
-        int[] a = new int[26], b = new int[26];
-
-        for (char c : word1.toCharArray()) {
-            a[c - 'a']++;
+        int[] count1 = new int[26], count2 = new int[26];
+        for (int i = 0; i < word1.length(); i++) {
+            count1[word1.charAt(i) - 'a']++;
+            count2[word2.charAt(i) - 'a']++;
         }
-
-        for (char c : word2.toCharArray()) {
-            b[c - 'a']++;
-        }
-
         for (int i = 0; i < 26; i++) {
-            if ((a[i] == 0 && b[i] != 0) || (a[i] != 0 && b[i] == 0)) {
+            if ((count1[i] == 0 && count2[i] != 0) || (count1[i] != 0 && count2[i] == 0))
                 return false;
-            }
         }
 
-        Arrays.sort(a);
-        Arrays.sort(b);
+        Arrays.sort(count1);
+        Arrays.sort(count2);
 
-        return Arrays.equals(a, b);
+        return Arrays.equals(count1, count2);
     }
 }
